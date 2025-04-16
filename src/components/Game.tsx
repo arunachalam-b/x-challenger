@@ -94,6 +94,7 @@ const Game: React.FC<GameProps> = ({ level, initialTime, onGameEnd }) => {
       <AnswerInput
          onSubmit={handleAnswerSubmit}
          isIncorrect={isIncorrect}
+         currentQuestion={currentQuestion}
          isDisabled={timeLeft <= 0} // Disable when time is up
         />
        {isIncorrect && <p className="feedback-incorrect">Try again!</p>}
