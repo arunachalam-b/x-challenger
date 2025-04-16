@@ -1,4 +1,3 @@
-// src/components/TimerDisplay.tsx
 import React from 'react';
 
 interface TimerDisplayProps {

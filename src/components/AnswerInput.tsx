@@ -1,11 +1,10 @@
-// src/components/AnswerInput.tsx
 import React, { useState, useRef, useEffect } from 'react';
 import { Question } from '../types';
 
 interface AnswerInputProps {
   onSubmit: (answer: string) => void;
-  isIncorrect: boolean; // To provide feedback (e.g., clear input or style)
-  isDisabled: boolean; // Disable input when game not running
+  isIncorrect: boolean;
+  isDisabled: boolean;
   currentQuestion?: Question | null;
 }
 
@@ -20,28 +19,23 @@ const AnswerInput: React.FC<AnswerInputProps> = ({ onSubmit, isIncorrect, isDisa
   const handleKeyDown = (event: React.KeyboardEvent<HTMLInputElement>) => {
     if (event.key === 'Enter' && answer.trim() !== '') {
       onSubmit(answer.trim());
-       // Don't clear automatically here, Game component decides based on correctness
     }
   };
 
-   // Clear input if the parent component signals it was incorrect
     useEffect(() => {
         if (isIncorrect) {
-           // Optionally add a visual cue like shaking or temporary border color change
-           // For now, we just keep the focus and the incorrect value stays
-           inputRef.current?.focus(); // Keep focus for retry
+           inputRef.current?.focus();
         } else {
-            setAnswer(''); // Clear only on correct answer submission (handled by parent setting isIncorrect to false)
+            setAnswer('');
         }
-    }, [isIncorrect]); // Rerun when isIncorrect status changes from parent
+    }, [isIncorrect]);
 
     useEffect(() => {
       if (currentQuestion && currentQuestion.id) {
-          setAnswer(''); // Clear input when a new question is generated
+          setAnswer('');
       }
     }, [currentQuestion])
 
-    // Focus the input when it becomes enabled (game starts)
      useEffect(() => {
         if (!isDisabled) {
             inputRef.current?.focus();
@@ -52,14 +46,14 @@ const AnswerInput: React.FC<AnswerInputProps> = ({ onSubmit, isIncorrect, isDisa
   return (
     <input
       ref={inputRef}
-      type="text" // Use text to allow potential decimals, handle parsing in Game component
+      type="text"
       value={answer}
       onChange={handleChange}
       onKeyDown={handleKeyDown}
       placeholder="Your answer..."
       disabled={isDisabled}
-      className={`answer-input ${isIncorrect ? 'incorrect' : ''}`} // Add class for potential styling
-      autoFocus // Focus on initial render/start
+      className={`answer-input ${isIncorrect ? 'incorrect' : ''}`}
+      autoFocus
     />
   );
 };

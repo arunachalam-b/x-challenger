@@ -1,4 +1,3 @@
-// src/components/Results.tsx
 import React, { useRef } from 'react';
 import html2canvas from 'html2canvas';
 import { GameStats } from '../types';
@@ -14,8 +13,8 @@ const Results: React.FC<ResultsProps> = ({ stats, onRestart }) => {
   const handleExport = () => {
     if (resultsRef.current) {
       html2canvas(resultsRef.current, {
-            useCORS: true, // If you were loading external images, needed
-            logging: false, // Disable console logging from html2canvas
+            useCORS: true,
+            logging: false,
             // scale: 2 // Increase resolution slightly
         })
         .then((canvas) => {
@@ -38,7 +37,7 @@ const Results: React.FC<ResultsProps> = ({ stats, onRestart }) => {
 
   return (
     <div className="results-container">
-      <div ref={resultsRef} className="results-content"> {/* Element to capture */}
+      <div ref={resultsRef} className="results-content">
         <h2>Game Over!</h2>
         <p>Level Played: {stats.level}</p>
         <p>Time: {stats.timeTaken} seconds</p>
@@ -46,7 +45,6 @@ const Results: React.FC<ResultsProps> = ({ stats, onRestart }) => {
         <p>Correct Answers: {stats.correctAnswers}</p>
         <p>Final Score: {stats.score}</p>
         <p>Incorrect Tries: {stats.incorrectAttempts}</p>
-         {/* Add a timestamp to the captured image */}
          <p style={{ fontSize: '0.8em', color: '#888', marginTop: '15px' }}>
             Captured on: {new Date().toLocaleString()}
          </p>

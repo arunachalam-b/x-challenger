@@ -1,4 +1,3 @@
-// src/components/QuestionDisplay.tsx
 import React from 'react';
 import { Question } from '../types';
 

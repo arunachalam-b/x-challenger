@@ -1,11 +1,10 @@
-/* src/App.css */
 body {
   font-family: sans-serif;
   background-color: #f4f7f6;
   color: #333;
   display: flex;
   justify-content: center;
-  align-items: flex-start; /* Align items to the top */
+  align-items: flex-start;
   min-height: 100vh;
   padding-top: 30px;
 }
@@ -31,7 +30,6 @@ h2 {
     margin-bottom: 15px;
 }
 
-/* Configuration Area */
 .config-area {
     margin-bottom: 30px;
     padding: 20px;
@@ -45,12 +43,12 @@ h2 {
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px; /* Spacing between label and input/select */
+    gap: 10px;
 }
 
 .setting label {
     font-weight: bold;
-    min-width: 150px; /* Align labels */
+    min-width: 150px;
     text-align: right;
 }
 
@@ -60,7 +58,7 @@ h2 {
   border: 1px solid #ccc;
   border-radius: 4px;
   font-size: 1rem;
-  min-width: 80px; /* Ensure minimum width */
+  min-width: 80px;
 }
 
 .start-button {
@@ -83,8 +81,6 @@ h2 {
     cursor: not-allowed;
 }
 
-
-/* Game Area */
 .game-area {
   margin-top: 20px;
 }
@@ -106,18 +102,18 @@ h2 {
 
 .timer {
   font-weight: bold;
-  color: #e76f51; /* Orange-red color for timer */
+  color: #e76f51;
 }
 
 .question-text {
-  font-size: 2rem; /* Make question prominent */
+  font-size: 2rem;
   font-weight: bold;
   margin: 30px 0;
   color: #333;
   padding: 15px;
   background-color: #f8f9fa;
   border-radius: 5px;
-  display: inline-block; /* Fit content width */
+  display: inline-block;
 }
 
 .answer-input {
@@ -129,7 +125,7 @@ h2 {
   border: 2px solid #ccc;
   border-radius: 5px;
   box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
-  margin-bottom: 10px; /* Space before feedback */
+  margin-bottom: 10px;
 }
 
 .answer-input:focus {
@@ -139,14 +135,12 @@ h2 {
 }
 
 .feedback-incorrect {
-    color: #d9534f; /* Red for incorrect */
+    color: #d9534f;
     font-weight: bold;
     margin-top: 10px;
-    height: 1.2em; /* Reserve space to prevent layout jump */
+    height: 1.2em;
 }
 
-
-/* Results Area */
 .results-container {
     margin-top: 30px;
     padding: 25px;
@@ -155,12 +149,11 @@ h2 {
     background-color: #f9f9f9;
 }
 .results-content {
-    /* Styles specific to the content being captured */
-     background-color: #ffffff; /* Ensure white background for screenshot */
+     background-color: #ffffff;
      padding: 20px;
      border: 1px dashed #ccc;
      border-radius: 5px;
-     margin-bottom: 20px; /* Space before buttons */
+     margin-bottom: 20px;
 }
 
 .results-content h2 {
@@ -176,7 +169,7 @@ h2 {
 .results-actions {
     display: flex;
     justify-content: center;
-    gap: 20px; /* Space between buttons */
+    gap: 20px;
     margin-top: 20px;
 }
 
@@ -194,9 +187,8 @@ h2 {
   background-color: #d65f41;
 }
 
-/* Style for the 'Save Progress' button specifically if needed */
 .results-actions button:last-child {
-    background-color: #f4a261; /* Different color for save */
+    background-color: #f4a261;
 }
 .results-actions button:last-child:hover {
     background-color: #e09351;
